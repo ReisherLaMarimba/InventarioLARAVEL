@@ -1,4 +1,11 @@
+@include('layouts.app')
+@section('content')
+<div class="container">
+@if (Session::has('mensaje'))
+{{ Session::get('mensaje') }}
+@endif
 <table class="table table-light">
+    <a href="{{url('items/crear')}}" class="btn btn-success">Crear Equipo en Inventario</a>
     <thead class-"thead-light">
         <tr>
             <th>Registro #</th>
@@ -42,3 +49,4 @@
        
     </tbody>
 </table>
+</div>

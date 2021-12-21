@@ -39,6 +39,8 @@ class ItemsController extends Controller
         //$datosItems = request()->all();
             $datosItems = request()->except('_token');
             items::insert($datosItems);
+
+           return redirect('items')->with('mensaje','Equipo agregado con exito') ;
         
     }
 
@@ -64,6 +66,7 @@ class ItemsController extends Controller
         $items = Items::findOrFail($id);
 
       return view('items.edit',compact('items'));
+      
     }
 
     /**
@@ -77,11 +80,9 @@ class ItemsController extends Controller
     public function update(Request $request, $id)
     {
         $datosItems = request()->except(['_token','_method']);
-
-        Items::where('id' ,'=' ,'$id')->update($datosItems);
+        Items::where('id' ,'=' ,$id)->update($datosItems);
 
         $items = Items::findOrFail($id);
-
         return view('items.edit',compact('items'));
     }
 
@@ -94,6 +95,6 @@ class ItemsController extends Controller
     public function destroy($id)
     {
         Items::destroy($id);
-        return redirect('items');
+        return redirect('items')->with('mensaje','Equipo eliminado con exito') ;
     }
 }

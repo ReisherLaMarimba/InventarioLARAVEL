@@ -14,15 +14,20 @@ use App\Http\Controllers\itemsController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/items', function () {
     return view('items.index');
 });
-Route::get('/items/crear', [itemsController::class,'create']);
-Route::resource('items', itemsController::class);
+Route::get('/items/crear', [itemsController::class,'create'])->middleware('auth');
+Route::resource('items', itemsController::class)->middleware('auth');
 
-Auth::routes();
+Auth::routes(['register'=>false,'reset'=>false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [ItemsController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'auth'], function (){
+
+Route::get('/', [ItemsController::class, 'index'])->name('home');
+});
