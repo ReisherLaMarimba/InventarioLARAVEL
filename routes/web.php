@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+
 Route::get('/items', function () {
     return view('items.index');
 });
