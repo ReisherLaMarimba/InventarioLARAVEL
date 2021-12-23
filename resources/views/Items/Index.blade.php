@@ -111,7 +111,7 @@
 <div class="card">
     
     <div class="card-body">
-        <h4>Editar / Borrar / Retirar  Equipos</h4>
+        <h4>Editar / Borrar  los  Equipos</h4>
 <table id="example2" class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -120,7 +120,7 @@
             <th>Daño</th>
             <th>Borrar</th>
             <th>Eliminar</th>
-            <th>Retirar</th>
+          
         </tr>
     </thead>
     <tbody>
@@ -143,7 +143,6 @@
                 </a>
             </td>
            
-          
          
             
         </tr> 
@@ -157,7 +156,7 @@
             <th>Daño</th>
             <th>Borrar</th>
             <th>Eliminar</th>
-            <th>Retirar</th>
+           
         </tr>
     </tfoot>
 </table>
