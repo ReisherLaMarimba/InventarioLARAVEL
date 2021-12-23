@@ -21,14 +21,21 @@ Route::get('/', function () {
 Route::get('/items', function () {
     return view('items.index');
 });
+Route::get('/items/pdf', [itemsController::class,'pdf'])->name('items.pdf');
 Route::get('/items/crear', [itemsController::class,'create'])->middleware('auth');
-Route::resource('items', itemsController::class)->middleware('auth');
-
+//ACTIVAR A TRUE PARA PERMITIR REGISTROS
 Auth::routes(['register'=>false,'reset'=>false]);
 
-Route::get('/home', [ItemsController::class, 'index'])->name('home');
+Route::get('/home', [itemsController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function (){
 
 Route::get('/', [ItemsController::class, 'index'])->name('home');
+Route::resource('items', itemsController::class)->middleware('auth');
+
+
+
+
+
+
 });

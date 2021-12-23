@@ -85,6 +85,7 @@
             <td>{{$items->retirado_por}}</td>
             <td>{{$items->fecha_retiro}}</td>
             <td>{{$items->fecha_ingreso}}</td>
+           
             
           
          
@@ -108,15 +109,18 @@
 </div>
 
 <div class="card">
+    
     <div class="card-body">
+        <h4>Editar / Borrar / Retirar  Equipos</h4>
 <table id="example2" class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>Codigo</th>
+           <th>Codigo</th>
             <th>Nombre</th>
-            <th>Daños</th>
-          
-        
+            <th>Daño</th>
+            <th>Borrar</th>
+            <th>Eliminar</th>
+            <th>Retirar</th>
         </tr>
     </thead>
     <tbody>
@@ -129,7 +133,7 @@
                 <form action="{{ url('/items/'.$items->id) }}" method="post">
                     @csrf
                     {{method_field('DELETE')}}
-                    <input type="submit" onclick="return confirm('Eliminar equipo')" value="Eliminar">
+                    <input type="submit" onclick="return confirm('Eliminar equipo')" value="Borrar">
                 </form>
 
             </td>
@@ -138,6 +142,7 @@
                     Editar
                 </a>
             </td>
+           
           
          
             
@@ -150,17 +155,14 @@
             <th>Codigo</th>
             <th>Nombre</th>
             <th>Daño</th>
-         
+            <th>Borrar</th>
+            <th>Eliminar</th>
+            <th>Retirar</th>
         </tr>
     </tfoot>
 </table>
     </div>
 </div>
-
-
-
-
-
 @stop
 
 
@@ -172,7 +174,7 @@
 <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
 <script>
-     $('#example').DataTable({
+    $('#example').DataTable({
        responsive:true,
        autowidth:false
      });

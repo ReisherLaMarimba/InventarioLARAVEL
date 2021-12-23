@@ -14,9 +14,17 @@ class ItemsController extends Controller
      */
     public function index()
     {
-        $datos['item']=Items::paginate(5);
+        $datos['item']=Items::paginate();
+        
         return view('items.index',$datos);
     }
+    public function pdf()
+    {
+        $datos['item']=Items::paginate();
+        return view('items.pdf',  compact('items'));
+       
+    }
+
 
     /**
      * Show the form for creating a new resource.
