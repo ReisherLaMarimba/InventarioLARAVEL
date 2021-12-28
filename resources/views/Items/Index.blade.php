@@ -4,11 +4,13 @@
 
 @section('content_header')
     <h1>Listado de Equipos</h1>
+    <h3 id="total" >Cantidad de equipos: ({{$totalEquip->count()}})</h3>
 @stop
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css">
 @endsection
 
 @section('content')
@@ -64,6 +66,7 @@
  --}}
 <div class="card">
     <div class="card-body">
+        
 <table id="example" class="table table-striped table-bordered">
     <thead>
         <tr>
@@ -115,6 +118,7 @@
 <table id="example2" class="table table-striped table-bordered">
     <thead>
         <tr>
+            <th></th>
            <th>Codigo</th>
             <th>Nombre</th>
             <th>Daño</th>
@@ -126,14 +130,15 @@
     <tbody>
         @foreach ($item as $items)
         <tr>
+            <td></td>
             <td>{{$items->codigo}}</td>
             <td>{{$items->nombre}}</td>
             <td>{{$items->Daño}}</td>
             <td>
-                <form action="{{ url('/items/'.$items->id) }}" method="post">
+                <form action="{{ url('/items/'.$items->id) }}" method="post" class="form-eliminar">
                     @csrf
                     {{method_field('DELETE')}}
-                    <input type="submit" onclick="return confirm('Eliminar equipo')" value="Borrar">
+                    <input type="submit"  value="Borrar">
                 </form>
 
             </td>
@@ -151,11 +156,13 @@
     </tbody>
     <tfoot>
         <tr>
+            <th></th>
             <th>Codigo</th>
             <th>Nombre</th>
             <th>Daño</th>
             <th>Borrar</th>
             <th>Eliminar</th>
+            
            
         </tr>
     </tfoot>
@@ -172,6 +179,21 @@
 <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+@if (session('eliminar')=='Borrado'){
+    <script>
+     Swal.fire(
+           'Eliminado',
+           'El equipo ha sido borrado',
+           'success'
+      
+        )
+    </script>
+    @endif
+}
+
 <script>
     $('#example').DataTable({
        responsive:true,
@@ -179,7 +201,36 @@
      });
      $('#example2').DataTable({
        responsive:true,
-       autowidth:false
+       autowidth:false,
+       columnDefs: [ {
+            orderable: false,
+            className: 'select-checkbox',
+            targets:   0
+        } ],
+        select: {
+            style:    'multi',
+            selector: 'td:first-child'
+        },
+        order: [[ 1, 'asc' ]]
+    
+     });
+     
+     $('.form-eliminar').submit(function(e){
+        e.preventDefault();
+        Swal.fire({
+  title: 'Quieres borrar el equipo?',
+  text: "Una vez dicho si, el equipo sera eliminado",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, Borralo'
+}).then((result) => {
+  if (result.isConfirmed) {
+ 
+    this.submit();
+  }
+})
      });
 </script>
  

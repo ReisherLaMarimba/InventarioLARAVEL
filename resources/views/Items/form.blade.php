@@ -6,7 +6,7 @@
     <br>
     <Label for="Nombre"> Ubicacion</Label>
     <input type="text" name = "ubicacion"value="{{isset($items->ubicacion)?$items->ubicacion:''}}" id = "ubicacion"> 
-    <br>
+    {{-- <br>
     <Label for="Nombre"> Retirado Por</Label>
     <input type="text" name = "retirado_por" value="{{isset($items->retirado_por)?$items->retirado_por:''}}" id = "retirado_por">
     <br>
@@ -17,7 +17,7 @@
     <input type="date" name = "fecha_ingreso" value="{{isset($items->fecha_ingreso)?$items->fecha_ingreso:''}}"id= "fecha_ingreso">
     <br>
     <Label for="Nombre"> Algun daño?</Label>
-    <input type="text" name = "Daño"value="{{isset($items->Daño)?$items->Daño:''}}" id="Daño">
+    <input type="text" name = "Daño"value="{{isset($items->Daño)?$items->Daño:''}}" id="Daño"> --}}
 
     <input type="submit" value="Guardar Datos">
 

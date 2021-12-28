@@ -23,6 +23,7 @@ Route::get('/items', function () {
 });
 Route::get('/items/pdf', [itemsController::class,'pdf'])->name('items.pdf');
 Route::get('/items/crear', [itemsController::class,'create'])->middleware('auth');
+Route::get('/items/retiro', [itemsController::class,'retiro'])->middleware('auth');
 //ACTIVAR A TRUE PARA PERMITIR REGISTROS
 Auth::routes(['register'=>false,'reset'=>false]);
 

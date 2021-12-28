@@ -15,8 +15,11 @@ class ItemsController extends Controller
     public function index()
     {
         $datos['item']=Items::paginate();
+        $totalEquip = Items::all();
         
-        return view('items.index',$datos);
+        return view('items.index',compact('totalEquip'),$datos,);
+
+
     }
     public function pdf()
     {
@@ -77,6 +80,10 @@ class ItemsController extends Controller
       
     }
 
+    public function retiro(){
+        return view('items.retiro');
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -103,6 +110,6 @@ class ItemsController extends Controller
     public function destroy($id)
     {
         Items::destroy($id);
-        return redirect('items')->with('mensaje','Equipo eliminado con exito') ;
+        return redirect('items')->with('eliminar','Borrado') ;
     }
 }
