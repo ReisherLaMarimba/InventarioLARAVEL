@@ -25,7 +25,7 @@ Route::get('/items/pdf', [itemsController::class,'pdf'])->name('items.pdf');
 Route::get('/items/crear', [itemsController::class,'create'])->middleware('auth');
 Route::get('/items/retiro', [itemsController::class,'retiro'])->middleware('auth');
 //ACTIVAR A TRUE PARA PERMITIR REGISTROS
-Auth::routes(['register'=>false,'reset'=>false]);
+Auth::routes(['register'=>true,'reset'=>false]);
 
 Route::get('/home', [itemsController::class, 'index'])->name('home');
 

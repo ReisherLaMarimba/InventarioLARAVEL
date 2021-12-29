@@ -73,6 +73,7 @@
             <th>Codigo</th>
             <th>Nombre</th>
             <th>Ubicacion</th>
+            <th>Cantidad</th>
             <th>Retirado Por</th>
             <th>Fecha de retiro</th>
             <th>Fecha de ingreso</th>
@@ -85,6 +86,7 @@
             <td>{{$items->codigo}}</td>
             <td>{{$items->nombre}}</td>
             <td>{{$items->ubicacion}}</td>
+            <td>{{$items->cantidad}}</td>
             <td>{{$items->retirado_por}}</td>
             <td>{{$items->fecha_retiro}}</td>
             <td>{{$items->fecha_ingreso}}</td>
@@ -102,6 +104,7 @@
             <th>Codigo</th>
             <th>Nombre</th>
             <th>Ubicacion</th>
+            <th>Cantidad</th>
             <th>Retirado Por</th>
             <th>Fecha de retiro</th>
             <th>Fecha de ingreso</th>

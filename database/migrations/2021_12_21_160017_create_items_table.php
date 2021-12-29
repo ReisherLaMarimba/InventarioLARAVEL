@@ -14,14 +14,15 @@ class CreateItemsTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->bigIncrements('Id');
+            $table->bigIncrements('id');
             $table->string('nombre');
             $table->string('codigo');
             $table->string('ubicacion');
-            $table->string('retirado_por');
-            $table->date('fecha_retiro');
-            $table->date('fecha_ingreso');
-            $table->string('Daño');
+            $table->string('retirado_por')->nullable();
+            $table->date('fecha_retiro')->nullable();
+            $table->date('fecha_ingreso')->nullable();
+            $table->integer('cantidad')->default(1);
+            $table->string('Daño')->default('Sin Daños');
 
             $table->timestamps();
         });
