@@ -262,7 +262,7 @@ return [
         // ],
         
       
-        ['header' => 'account_settings'],
+        ['header' => 'Herramientas de Adminitracion'],
         // [
         //     'text' => 'profile',
         //     'url'  => 'admin/settings',
@@ -280,7 +280,7 @@ return [
                 [
                     'text'        => 'Agregar Equipo',
                     'url'         => 'items/crear',
-                    'icon'        => 'far fa-fw fa-file',
+                    'icon'        => 'far fa-plus-square',
                     //'label'       => 4,
                     'label_color' => 'success',
                 ],
@@ -312,6 +312,20 @@ return [
                     'text'        => 'Retirar Equipos',
                     'url'         => 'items/retiro',
                     'icon'        => 'far fa-fw fa-file',
+                    //'label'       => 4,
+                    'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Lista de empleado',
+                    'url'         => 'persons',
+                    'icon'        => 'fas fa-list-ol',
+                    //'label'       => 4,
+                    'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Crear Empleados',
+                    'url'         => 'persons/crear',
+                    'icon'        => 'far fa-address-card',
                     //'label'       => 4,
                     'label_color' => 'success',
                 ],

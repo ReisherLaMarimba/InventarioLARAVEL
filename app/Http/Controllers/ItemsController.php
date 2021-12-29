@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Persons;
 use App\Models\Items;
 use Illuminate\Http\Request;
 
@@ -19,13 +19,21 @@ class ItemsController extends Controller
         
         return view('items.index',compact('totalEquip'),$datos,);
 
-
     }
+    
+
     public function pdf()
     {
         $datos['item']=Items::paginate();
         return view('items.pdf',  compact('items'));
        
+    }
+    public function retiro()
+    {
+        $equipos=Items::all();
+        $persona=Persons::all();
+      return view('items.retiro',compact('equipos','persona'));
+      
     }
 
 
@@ -80,9 +88,7 @@ class ItemsController extends Controller
       
     }
 
-    public function retiro(){
-        return view('items.retiro');
-    }
+ 
 
     /**
      * Update the specified resource in storage.
