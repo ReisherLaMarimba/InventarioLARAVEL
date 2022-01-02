@@ -36,7 +36,7 @@ class PersonController extends Controller
             $datosItems = request()->except('_token');
             persons::insert($datosItems);
 
-           return redirect('persons')->with('mensaje','Equipo agregado con exito') ;
+           return redirect('persons')->with('mensaje','Empleado agregado con exito') ;
         
     }
         /**
@@ -56,6 +56,7 @@ class PersonController extends Controller
       return view('persons.edit',compact('persons'));
       
     }
+    
         /**
      * Update the specified resource in storage.
      *

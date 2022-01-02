@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Persons;
 use App\Models\Items;
+use App\Models\Proyectos;
 use Illuminate\Http\Request;
 
 class ItemsController extends Controller
@@ -32,7 +33,8 @@ class ItemsController extends Controller
     {
         $equipos=Items::all();
         $persona=Persons::all();
-      return view('items.retiro',compact('equipos','persona'));
+        $proyecto=Proyectos::all();
+      return view('items.retiro',compact('equipos','persona','proyecto'));
       
     }
 

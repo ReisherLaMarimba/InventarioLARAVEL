@@ -8,7 +8,7 @@
     <input type="text" name = "ubicacion"value="{{isset($items->ubicacion)?$items->ubicacion:''}}" id = "ubicacion"> 
     <br>
     <Label for="Nombre"> Cantidad</Label>
-    <input type="text" name = "ubicacion"value="{{isset($items->cantidad)?$items->cantidad:''}}" id = "cantidad"> 
+    <input type="text" name = "cantidad"value="{{isset($items->cantidad)?$items->cantidad:''}}" id = "cantidad"> 
     {{-- <br>
     <Label for="Nombre"> Retirado Por</Label>
     <input type="text" name = "retirado_por" value="{{isset($items->retirado_por)?$items->retirado_por:''}}" id = "retirado_por">

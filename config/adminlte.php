@@ -253,6 +253,20 @@ return [
             //'label'       => 4,
             'label_color' => 'success',
         ],
+        [
+            'text'        => 'Lista de empleado',
+            'url'         => 'persons',
+            'icon'        => 'fas fa-list-ol',
+            //'label'       => 4,
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Lista de proyectos',
+            'url'         => 'proyectos',
+            'icon'        => 'fas fa-list-ol',
+            //'label'       => 4,
+            'label_color' => 'success',
+        ],
         // [
         //     'text'        => 'Agregar Equipo',
         //     'url'         => 'items/crear',
@@ -284,6 +298,7 @@ return [
                     //'label'       => 4,
                     'label_color' => 'success',
                 ],
+                
                 // [
                 //     'text'    => 'level_one',
                 //     'url'     => '#',
@@ -315,16 +330,17 @@ return [
                     //'label'       => 4,
                     'label_color' => 'success',
                 ],
+               
                 [
-                    'text'        => 'Lista de empleado',
-                    'url'         => 'persons',
-                    'icon'        => 'fas fa-list-ol',
+                    'text'        => 'Crear Empleados',
+                    'url'         => 'persons/crear',
+                    'icon'        => 'far fa-address-card',
                     //'label'       => 4,
                     'label_color' => 'success',
                 ],
                 [
-                    'text'        => 'Crear Empleados',
-                    'url'         => 'persons/crear',
+                    'text'        => 'Crear Proyectos',
+                    'url'         => 'proyectos/crear',
                     'icon'        => 'far fa-address-card',
                     //'label'       => 4,
                     'label_color' => 'success',

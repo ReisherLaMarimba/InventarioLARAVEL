@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Listado de Empleados</h1>
+    <h1>Listado de proyectos</h1>
     {{-- <h3 id="total" >Cantidad de equipos: ({{$totalEquip2->count()}})</h3> --}}
 @stop
 @section('css')
@@ -70,27 +70,23 @@
 <table id="example" class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>Codigo_Empleado</th>
             <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Departamento</th>
-            <th>Encargado</th>
+            <th>Ubicacion</th>
             <th>Borrar</th>
             <th>Editar</th>
+        
             
             
         </tr>
     </thead>
     <tbody>
-        @foreach ($person as $persons)
+        @foreach ($proyecto as $proyectos)
         <tr>
-            <td>{{$persons->codigo_empleado}}</td>
-            <td>{{$persons->nombre}}</td>
-            <td>{{$persons->apellido}}</td>
-            <td>{{$persons->departamento}}</td>
-            <td>{{$persons->encargado}}</td>
+            <td>{{$proyectos->nombre}}</td>
+            <td>{{$proyectos->ubicacion}}</td>
+       
             <td>
-                <form action="{{ url('/persons/'.$persons->id) }}" method="post" class="form-eliminar">
+                <form action="{{ url('/proyectos/'.$proyectos->id) }}" method="post" class="form-eliminar">
                     @csrf
                     {{method_field('DELETE')}}
                     <input type="submit"  value="Borrar">
@@ -98,7 +94,7 @@
 
             </td>
             <td>
-                <a href="{{url('/persons/'.$persons->id.'/edit')}}">
+                <a href="{{url('/proyectos/'.$proyectos->id.'/edit')}}">
                     Editar
                 </a>
             </td>
@@ -115,9 +111,6 @@
         <tr>
             <th>Codigo_Empleado</th>
             <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Departamento</th>
-            <th>Encargado</th>
             <th>Borrar</th>
             <th>Editar</th>
             
@@ -127,64 +120,6 @@
     </div>
 </div>
 
-{{-- <div class="card">
-    
-    <div class="card-body">
-        <h4>Editar / Borrar  los  Equipos</h4>
-<table id="example2" class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th></th>
-           <th>Codigo</th>
-            <th>Nombre</th>
-            <th>Daño</th>
-            <th>Borrar</th>
-            <th>Eliminar</th>
-          
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($person as $persons)
-        <tr>
-            <td></td>
-            <td>{{$items->codigo}}</td>
-            <td>{{$items->nombre}}</td>
-            <td>{{$items->Daño}}</td>
-            <td>
-                <form action="{{ url('/items/'.$items->id) }}" method="post" class="form-eliminar">
-                    @csrf
-                    {{method_field('DELETE')}}
-                    <input type="submit"  value="Borrar">
-                </form>
-
-            </td>
-            <td>
-                <a href="{{url('/items/'.$items->id.'/edit')}}">
-                    Editar
-                </a>
-            </td>
-           
-         
-            
-        </tr> 
-        @endforeach
-       
-    </tbody>
-    <tfoot>
-        <tr>
-            <th></th>
-            <th>Codigo</th>
-            <th>Nombre</th>
-            <th>Daño</th>
-            <th>Borrar</th>
-            <th>Eliminar</th>
-            
-           
-        </tr>
-    </tfoot>
-</table>
-    </div>
-</div> --}}
 @stop
 
 
