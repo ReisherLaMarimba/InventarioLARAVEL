@@ -61,7 +61,7 @@ class ItemsController extends Controller
             $datosItems = request()->except('_token');
             items::insert($datosItems);
 
-           return redirect('items')->with('mensaje','Equipo agregado con exito') ;
+           return redirect('items/crear ')->with('mensaje','creado') ;
         
     }
 
@@ -86,7 +86,7 @@ class ItemsController extends Controller
     {
         $items = Items::findOrFail($id);
 
-      return view('items.edit',compact('items'));
+      return view('items.edit',compact('items'))->with('edita','editado');
       
     }
 
@@ -106,7 +106,7 @@ class ItemsController extends Controller
         Items::where('id' ,'=' ,$id)->update($datosItems);
 
         $items = Items::findOrFail($id);
-        return view('items.edit',compact('items'));
+        return view('items.edit',compact('items'))->with('edita','editado');
     }
 
     /**

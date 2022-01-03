@@ -221,7 +221,7 @@
      $('.form-eliminar').submit(function(e){
         e.preventDefault();
         Swal.fire({
-  title: 'Quieres borrar el equipo?',
+  title: 'Quieres borrar el equipo',
   text: "Una vez dicho si, el equipo sera eliminado",
   icon: 'warning',
   showCancelButton: true,
