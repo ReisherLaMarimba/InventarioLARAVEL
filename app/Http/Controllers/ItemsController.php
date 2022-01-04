@@ -29,7 +29,7 @@ class ItemsController extends Controller
         return view('items.pdf',  compact('items'));
        
     }
-    public function retiro()
+    public function retiro($id)
     {
         
         $equipos=Items::all();
