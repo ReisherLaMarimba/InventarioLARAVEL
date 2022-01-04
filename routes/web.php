@@ -29,6 +29,7 @@ Route::get('/persons', function () {
 Route::get('/proyectos', function () {
     return view('proyectos.index');
 });
+
 Route::get('/items/pdf', [itemsController::class,'pdf'])->name('items.pdf');
 Route::get('/items/crear', [itemsController::class,'create'])->middleware('auth');
 Route::get('/persons/crear', [PersonController::class,'create'])->middleware('auth');

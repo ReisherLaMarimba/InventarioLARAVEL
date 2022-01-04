@@ -13,10 +13,12 @@
     <div class="container">
         <form action="{{ url('/items') }}" method="post" class="form-crear">
             @csrf
-            @include('items.form');
+            @include('items.form')
         </form>
 
     </div>
+
+    
 @stop
 
 @section('css')

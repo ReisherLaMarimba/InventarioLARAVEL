@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Editando <span style="color: red">{{$items->nombre}}</span></h1>
+    <h1>Editando:<span style="color: red">{{$items->nombre}}</span></h1>
 @stop
 
 @section('content')

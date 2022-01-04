@@ -31,6 +31,7 @@ class ItemsController extends Controller
     }
     public function retiro()
     {
+        
         $equipos=Items::all();
         $persona=Persons::all();
         $proyecto=Proyectos::all();
@@ -57,6 +58,19 @@ class ItemsController extends Controller
      */
     public function store(Request $request)
     {
+        $ValidDatos=[
+            'nombre'=>'required|string|max:50' , 
+            'codigo'=>'required|string|max:50' , 
+            'ubicacion'=>'required|string|max:50'  ,
+            'cantidad'=>'required|int|min:1'    
+        ];
+        $MensajeErr=[
+                'required'=>'Es requerido completar: :attribute'
+            ];
+            $this->validate($request, $ValidDatos, $MensajeErr);
+
+
+
         //$datosItems = request()->all();
             $datosItems = request()->except('_token');
             items::insert($datosItems);
