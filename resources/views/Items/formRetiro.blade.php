@@ -14,7 +14,7 @@
                     </select>
                 </div>
                 <div class="col-md-3">
-                    <select name="" class="form-control">
+                    <select name="equipo" class="form-control">
                         <option value="">Seleccione el encargado</option>
                         @foreach ($persona as $personas)
                             <option value="{{ $personas->id }}">{{ $personas->nombre }}</option>
@@ -22,7 +22,7 @@
                     </select>
                 </div>
                 <div class="col-md-3">
-                    <select name="" class="form-control">
+                    <select name="proyecto" class="form-control">
                         <option value="">Seleccione el proyecto</option>
                         @foreach ($proyecto as $proyectos)
                             <option value="{{ $proyectos->id }}">{{ $proyectos->nombre }}</option>

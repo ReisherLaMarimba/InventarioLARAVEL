@@ -5,7 +5,7 @@ use App\Models\Persons;
 use App\Models\Items;
 use App\Models\Proyectos;
 use Illuminate\Http\Request;
-
+use DB;
 class ItemsController extends Controller
 {
     /**
@@ -29,12 +29,12 @@ class ItemsController extends Controller
         return view('items.pdf',  compact('items'));
        
     }
-    public function retiro($id)
+    public function retiro(Request $request)
     {
-        
-        $equipos=Items::all();
-        $persona=Persons::all();
-        $proyecto=Proyectos::all();
+   
+        $equipos= DB::table('items')->get();
+        $persona=DB::table('Persons')->get();
+        $proyecto=DB::table('proyectos')->get();
       return view('items.retiro',compact('equipos','persona','proyecto'));
       
     }
