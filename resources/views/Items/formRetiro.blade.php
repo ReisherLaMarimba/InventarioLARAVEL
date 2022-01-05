@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <select name="" class="form-control">
+                    <select name="equipos" class="form-control">
                         <option value="">Seleccione los equipos</option>
                         @foreach ($equipos as $equipo)
                             <option value="{{ $equipo->id }}">{{ $equipo->nombre }}</option>

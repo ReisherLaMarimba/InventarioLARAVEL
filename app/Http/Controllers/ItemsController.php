@@ -31,11 +31,13 @@ class ItemsController extends Controller
     }
     public function retiro(Request $request)
     {
-   
+        $opEquip = $request->get("equipos");
+        $opcion = array($opEquip);
+       
         $equipos= DB::table('items')->get();
         $persona=DB::table('Persons')->get();
         $proyecto=DB::table('proyectos')->get();
-      return view('items.retiro',compact('equipos','persona','proyecto'));
+      return view('items.retiro',compact('equipos','persona','proyecto','opcion'));
       
     }
 

@@ -18,13 +18,45 @@
 @section('content')
 
     <div class="container2">
-<form action="{{url('/items/'.$equipos->id)}}"method="post">
+<form action="{{url('/items')}}"method="post">
     @csrf
-    {{method_field('PATCH')}}
+    {{-- {{method_field('PATCH')}} --}}
     @include('items.formRetiro')
     <div class="card">
         <div class="card-body">
             <h3>Listado en proceso de retiro</h3>
+
+            <table id="example" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        
+                        <th>Nombre</th>
+                        
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($opcion as $opcions)
+                    <tr>
+                        <td>{{$opcions}}</td>
+                    
+                       
+                        
+                      
+                     
+                        
+                    </tr> 
+                    @endforeach
+                   
+                </tbody>
+                <tfoot>
+                    <tr>
+                      
+                        <th>Nombre</th>
+                   
+                    </tr>
+                </tfoot>
+            </table>
         </div>
     </div>
 </form>
@@ -41,5 +73,7 @@
             theme: "bootstrap4"
 
         });
+ 
+      
     </script>
 @stop
