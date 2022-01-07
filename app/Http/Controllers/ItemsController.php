@@ -17,7 +17,7 @@ class ItemsController extends Controller
     {
         $datos['item']=Items::paginate();
         $totalEquip = Items::all();
-        
+       
         return view('items.index',compact('totalEquip'),$datos,);
 
     }
@@ -29,17 +29,15 @@ class ItemsController extends Controller
         return view('items.pdf',  compact('items'));
        
     }
-    public function retiro(Request $request)
-    {
-        $opEquip = $request->get("equipos");
-        $opcion = array($opEquip);
-       
-        $equipos= DB::table('items')->get();
-        $persona=DB::table('Persons')->get();
-        $proyecto=DB::table('proyectos')->get();
-      return view('items.retiro',compact('equipos','persona','proyecto','opcion'));
+    // public function retiro(Request $request)
+    // {
+        
+    //     $equipos= DB::table('items')->get();
+    //     $persona=DB::table('Persons')->get();
+    //     $proyecto=DB::table('proyectos')->get();
+    //   return view('items.retiro',compact('equipos','persona','proyecto'));
       
-    }
+    // }
 
 
     /**
@@ -49,6 +47,7 @@ class ItemsController extends Controller
      */
     public function create()
     {
+    
         return view('items.crear');
     }
 
