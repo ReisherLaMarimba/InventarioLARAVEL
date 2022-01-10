@@ -17,7 +17,7 @@
                     <select name="person" class="form-control">
                         <option value="">Seleccione el encargado</option>
                         @foreach ($persona as $personas)
-                            <option value="{{ $personas->id }}">{{ $personas->nombre }}</option>
+                            <option value="{{ $personas->nombre }}">{{ $personas->nombre }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -25,7 +25,7 @@
                     <select name="project" class="form-control">
                         <option value="">Seleccione el proyecto</option>
                         @foreach ($proyecto as $proyectos)
-                            <option value="{{ $proyectos->id }}">{{ $proyectos->nombre }}</option>
+                            <option value="{{ $proyectos->nombre }}">{{ $proyectos->nombre }}</option>
                         @endforeach
                     </select>
                 </div>

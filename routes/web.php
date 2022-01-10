@@ -48,6 +48,7 @@ Route::get('/', [ItemsController::class, 'index'])->name('home');
 Route::resource('items', itemsController::class)->middleware('auth');
 Route::resource('persons', PersonController::class)->middleware('auth');
 Route::resource('proyectos', ProyectosController::class)->middleware('auth');
+Route::resource('retiros', RetiroController::class)->middleware('auth');
 
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\Persons;
 use App\Models\Items;
@@ -13,31 +14,22 @@ class RetiroController extends Controller
 
     public function retiro(Request $request)
     {
-        $equipos=DB::table('items')->get();
+        $equipos=DB::table('items')->whereNull('retirado_por')
+        ->get();
+
         $persona=DB::table('Persons')->get();
         $proyecto=DB::table('proyectos')->get();
-        
-        
 
-//         $data = $request->all();
-//       if(empty($data)) {
-//        $data = json_decode($request->getContent());
-//       $data = json_decode($data);
+        $equipid = $request->input('equip');
+        $personid = $request->input('person');
+        $carbon = new \Carbon\Carbon();
+        $mytime = $carbon->now();
+        // $projectid = $request->input('project');
+        
+        $RetUpdate = DB::table('items')
+              ->where('id', $equipid)
+              ->update(['retirado_por' => $personid, 'fecha_retiro'=> $mytime]);
 
-//     if(is_null($data)) {
-//         return response()->json("Not valid json", 400);
-//     }
-// }
-    //  return $request->input('equip');
-       $mensaje = $request->input('equip');
-       $mensaje1 = $request->input('person');
-       $mensaje2 = $request->input('project');
-       
-       echo($mensaje);
-       echo($mensaje1);
-       echo($mensaje2);
       return view('items.retiro',compact('equipos','persona','proyecto'));
-      
     }
-
 }

@@ -123,6 +123,53 @@
 </table>
     </div>
 </div>
+
+
+<div class="card">
+    
+    <div class="card-body">
+        <h4>Equipos Retirados</h4>
+<table id="example2" class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            
+           <th>Codigo</th>
+            <th>Nombre</th>
+            <th>retirado por</th>
+            <th>Fecha de retiro</th>
+        
+          
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($retirado as $retirados)
+        <tr>
+         
+            <td>{{$retirados->codigo}}</td>
+            <td>{{$retirados->nombre}}</td>
+            <td>{{$retirados->retirado_por}}</td>
+            <td>{{$retirados->fecha_retiro}}</td>
+          
+         
+            
+        </tr> 
+        @endforeach
+       
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Retirado por</th>
+            <th>Fecha de retiro</th>
+       
+            
+           
+        </tr>
+    </tfoot>
+</table>
+    </div>
+</div>
 @stop
 
 
@@ -168,6 +215,7 @@
         order: [[ 1, 'asc' ]]
     
      });
+     
      
      $('.form-eliminar').submit(function(e){
         e.preventDefault();

@@ -17,8 +17,10 @@ class ItemsController extends Controller
     {
         $datos['item']=Items::paginate();
         $totalEquip = Items::all();
-       
-        return view('items.index',compact('totalEquip'),$datos,);
+        $retirado = DB::table('items')
+        ->whereNotNull('retirado_por')
+        ->get();
+        return view('items.index',compact('totalEquip','retirado'),$datos,);
 
     }
     
@@ -116,7 +118,8 @@ class ItemsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {    
+           
         $datosItems = request()->except(['_token','_method']);
         Items::where('id' ,'=' ,$id)->update($datosItems);
 
