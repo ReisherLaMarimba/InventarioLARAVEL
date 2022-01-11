@@ -36,7 +36,10 @@ Route::get('/items/pdf', [itemsController::class,'pdf'])->name('items.pdf');
 Route::get('/items/crear', [itemsController::class,'create'])->middleware('auth');
 Route::get('/persons/crear', [PersonController::class,'create'])->middleware('auth');
 Route::get('/items/retiro', [RetiroController::class,'retiro'])->middleware('auth');
+Route::get('/items/ingreso/{id}', [RetiroController::class,'ingreso'])->middleware('auth');
 Route::get('/proyectos/crear', [ProyectosController::class,'create'])->middleware('auth');
+
+
 //ACTIVAR A TRUE PARA PERMITIR REGISTROS
 Auth::routes(['register'=>true,'reset'=>false]);
 

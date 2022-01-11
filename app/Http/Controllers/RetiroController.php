@@ -8,6 +8,7 @@ use App\Models\Persons;
 use App\Models\Items;
 use App\Models\Proyectos;
 use DB;
+use Log;
 
 class RetiroController extends Controller
 {
@@ -31,5 +32,14 @@ class RetiroController extends Controller
               ->update(['retirado_por' => $personid, 'fecha_retiro'=> $mytime]);
 
       return view('items.retiro',compact('equipos','persona','proyecto'));
+    }
+
+    public function ingreso(Request $request ,$id){
+        echo($id);
+         DB::table('items')
+        ->where('id', $id)
+        ->update(['retirado_por' => NULL, 'fecha_retiro'=>NULL]);
+           
+     return redirect('items');
     }
 }

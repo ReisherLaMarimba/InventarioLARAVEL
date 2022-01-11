@@ -4,7 +4,7 @@
 
 @section('content_header')
     <h1>Listado de Equipos</h1>
-    <h3 id="total" >Cantidad de equipos: ({{$totalEquip->count()}})</h3>
+    {{-- <h3 id="total" >Cantidad de equipos: ({{$totalEquip->count()}})</h3> --}}
 @stop
 @section('css')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
@@ -149,7 +149,15 @@
             <td>{{$retirados->nombre}}</td>
             <td>{{$retirados->retirado_por}}</td>
             <td>{{$retirados->fecha_retiro}}</td>
-          
+            <td>
+                <form action="{{ url('/items/ingreso/'.$items->id)   }}" method="get">
+                    <div class="col-md-2">
+                        <button type= "submit" >Agregar</button>
+    
+                    </div>
+                    
+                </form>
+            </td>
          
             
         </tr> 
