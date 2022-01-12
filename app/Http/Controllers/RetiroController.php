@@ -35,11 +35,13 @@ class RetiroController extends Controller
     }
 
     public function ingreso(Request $request ,$id){
-        echo($id);
+        // echo($id);
+        $carbon = new \Carbon\Carbon();
+        $mytime = $carbon->now();
          DB::table('items')
         ->where('id', $id)
-        ->update(['retirado_por' => NULL, 'fecha_retiro'=>NULL]);
+        ->update(['retirado_por' => NULL, 'fecha_retiro'=>NULL, 'fecha_ingreso'=>$mytime]);
            
-     return redirect('items');
+     return redirect('items')->with('ingresar','ingresado');
     }
 }
