@@ -18,6 +18,8 @@ class RetiroController extends Controller
         $equipos=DB::table('items')->whereNull('retirado_por')
         ->get();
 
+        $retiros = DB::table('items')->WhereNotNull('retirado_por')->get();
+
         $persona=DB::table('Persons')->get();
         $proyecto=DB::table('proyectos')->get();
 
@@ -29,9 +31,9 @@ class RetiroController extends Controller
         
         $RetUpdate = DB::table('items')
               ->where('id', $equipid)
-              ->update(['retirado_por' => $personid, 'fecha_retiro'=> $mytime]);
+              ->update(['retirado_por' => $personid, 'fecha_retiro'=> $mytime,'fecha_ingreso'=>NULL]);
 
-      return view('items.retiro',compact('equipos','persona','proyecto'));
+      return view('items.retiro',compact('equipos','persona','proyecto','retiros'))->with('retirar','retirado');
     }
 
     public function ingreso(Request $request ,$id){
@@ -42,6 +44,6 @@ class RetiroController extends Controller
         ->where('id', $id)
         ->update(['retirado_por' => NULL, 'fecha_retiro'=>NULL, 'fecha_ingreso'=>$mytime]);
            
-     return redirect('items')->with('ingresar','ingresado');
+        return redirect()->back()->with('ingresar','ingresado');
     }
 }

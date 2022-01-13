@@ -128,6 +128,7 @@
     <div class="card">
 
         <div class="card-body">
+           
             <h4>Equipos Retirados</h4>
             <table id="example2" class="table table-striped table-bordered">
                 <thead>
@@ -143,6 +144,7 @@
                 </thead>
                 <tbody>
                     @foreach ($retirado as $retirados)
+                    
                         <tr>
 
                             <td>{{ $retirados->codigo }}</td>
@@ -154,7 +156,7 @@
                                     class="form-ingresar">
                                     @csrf
                                     <div class="col-md-2">
-                                        <button type="submit">Ingresar equipo</button>
+                                        <button type="submit">Ingresar</button>
 
                                     </div>
 
@@ -192,7 +194,7 @@
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
     @if (session('eliminar') == 'Borrado'){
         <script>
             Swal.fire(
