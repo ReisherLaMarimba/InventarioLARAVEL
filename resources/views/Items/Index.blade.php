@@ -89,7 +89,7 @@
                             <td>{{ $items->nombre }}</td>
                             <td>{{ $items->Daño }}</td>
                             <td>
-                                <form action="{{ url('/items/' . $items->id) }}" method="post" class="form-eliminar">
+                                <form action="{{ url('/items/' . $items->id) }}" method="post" class="form-eliminar" >
                                     @csrf
                                     {{ method_field('DELETE') }}
                                     <input type="submit" value="Borrar">
@@ -97,7 +97,7 @@
 
                             </td>
                             <td>
-                                <a href="{{ url('/items/' . $items->id . '/edit') }}">
+                                <a href="{{ url('/items/' . $items->id . '/edit') }}"class="btn btn-warning" role="button">
                                     Editar
                                 </a>
                             </td>

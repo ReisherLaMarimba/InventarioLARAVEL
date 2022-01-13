@@ -49,7 +49,7 @@
                 <div class="col-md-4">
                     <input type="submit" value="Guardar Datos">
 
-                    <a href="{{ url('items') }}">Regresar</a>
+                    <a href="{{ url('items') }}"class="btn btn-info" role="button">Regresar</a>
                 </div>
             </div>
 
