@@ -6,4 +6,4 @@
     <br>
     <input type="submit" value="Guardar Datos">
 
-    <a href="{{url('proyectos')}}">Regresar</a>
+    <a href="{{url('proyectos')}}"class="btn btn-warning" role="button">Regresar</a>

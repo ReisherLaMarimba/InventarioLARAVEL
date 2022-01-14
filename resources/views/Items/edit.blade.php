@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <form action="{{ url('/items' . $items->id) }}" method="post">
+    <form action="{{ url('/items/' . $items->id) }}" method="post">
         @csrf
         {{ method_field('PATCH') }}
         @include('items.form');
@@ -28,6 +28,18 @@
                 position: 'top-end',
                 icon: 'success',
                 title: 'Equipo de ISSRD agregado',
+                showConfirmButton: false,
+                timer: 1500
+            })
+        </script>
+    @endif
+    }
+    @if (session('edita') == 'editado'){
+        <script>
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Equipo de ISSRD editado',
                 showConfirmButton: false,
                 timer: 1500
             })

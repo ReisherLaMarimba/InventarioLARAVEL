@@ -82,7 +82,7 @@ class ProyectosController extends Controller
         $datosItems = request()->except(['_token','_method']);
         proyectos::where('id' ,'=' ,$id)->update($datosItems);
 
-        $persons = proyectos::findOrFail($id);
+        $proyectos = proyectos::findOrFail($id);
         return view('proyectos.edit',compact('proyectos'));
     }
 

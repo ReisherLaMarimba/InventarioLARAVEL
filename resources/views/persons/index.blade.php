@@ -98,7 +98,7 @@
 
             </td>
             <td>
-                <a href="{{url('/persons/'.$persons->id.'/edit')}}">
+                <a href="{{url('/persons/'.$persons->id.'/edit')}}"class="btn btn-warning" role="button">
                     Editar
                 </a>
             </td>

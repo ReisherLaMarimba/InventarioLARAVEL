@@ -1,3 +1,5 @@
+
+
 <Label for="Nombre"> Codigo del empleado</Label>
     <input type="text" name = "codigo_empleado" value="{{isset($persons->codigo_empleado)?$persons->codigo_empleado:''}}" id="codigo_empleado">
     <br>
@@ -14,4 +16,4 @@
     <input type="text" name = "encargado" value="{{isset($persons->encargado)?$persons->encargado:''}}" id = "encargado">
     <input type="submit" value="Guardar Datos">
 
-    <a href="{{url('persons')}}">Regresar</a>
+    <a href="{{url('persons')}}"class="btn btn-warning" role="button">Regresar</a>

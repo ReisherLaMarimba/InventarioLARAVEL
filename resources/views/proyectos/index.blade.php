@@ -94,7 +94,7 @@
 
             </td>
             <td>
-                <a href="{{url('/proyectos/'.$proyectos->id.'/edit')}}">
+                <a href="{{url('/proyectos/'.$proyectos->id.'/edit')}}"class="btn btn-warning" role="button">
                     Editar
                 </a>
             </td>

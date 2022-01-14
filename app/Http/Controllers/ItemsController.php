@@ -103,7 +103,7 @@ class ItemsController extends Controller
     {
         $items = Items::findOrFail($id);
 
-      return view('items.edit',compact('items'))->with('edita','editado');
+      return view('items.edit',compact('items'));
       
     }
 
