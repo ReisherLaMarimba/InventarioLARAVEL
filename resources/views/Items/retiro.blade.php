@@ -35,7 +35,7 @@
             
             <div class="card-body">
                
-                <button type="button" id="button">Test</button>
+                
                 <h4>Equipos Retirados</h4>
                 <table id="example2" class="table table-striped table-bordered">
                     <thead>
@@ -87,12 +87,48 @@
                         </tr>
                     </tfoot>
                 </table>
+                <button type="button" id="button">Enviar a conduce</button>
             </div>
         </div>
-
-        <div id="events">
-              
+        <div class="card">
+            <div class="card-body">
+                <h3>Seleccione arriba los esquipos para realizar conduce de salida</h3>
+                <div id="events">
+                    <table id="table" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+        
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>retirado por</th>
+                                <th>Fecha de retiro</th>
+                                
+        
+                            </tr>
+                        </thead>
+                        <tbody>
+                          
+                            
+                            
+                           
+        
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Retirado por</th>
+                                <th>Fecha de retiro</th>
+                                 
+        
+        
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
         </div>
+        
 
     @stop
 
@@ -124,7 +160,7 @@
     // } );
 
     var oTable = $('#example2').DataTable();
-    var events = $('#events');
+    var events = $('#table');
 $('#example2 tbody').on( 'click', 'tr', function () {
     $(this).toggleClass('selected');
     var pos = oTable.row(this).index();
@@ -138,9 +174,15 @@ $('#button').click( function () {
     for (var i=0; i < oData.length ;i++){
     //    alert("Name: " + oData[i][0] + " Position: " + oData[i][1] + " Office: " + oData[i][2]);
     events.prepend( 
-           '<th>'+oData[i][0]+'</th>', 
-           '<th>'+oData[i][1]+'</th>'
-           
+
+
+           '<tr>',
+           '<td>'+oData[i][0]+'</td>', 
+           '<td>'+oData[i][1]+'</td>',
+           '<td>'+oData[i][2]+'</td>',
+           '<td>'+oData[i][3]+'</td>',
+           '</tr>'
+
            ); 
     }
 
