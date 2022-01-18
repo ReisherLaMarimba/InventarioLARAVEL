@@ -91,7 +91,7 @@
                             <td>{{ $items->nombre }}</td>
                             <td>{{ $items->Daño }}</td>
                             <td>
-                                <form action="{{ url('/items/' . $items->id) }}" method="post" class="form-eliminar" >
+                                <form action="{{ url('/items/' . $items->id) }}" method="post" class="form-elimina" >
                                     @csrf
                                     {{ method_field('DELETE') }}
                                     <input type="submit" value="Borrar">
@@ -255,8 +255,8 @@ color: #009879;
   margin-bottom:0;
 }
 
+ </style>
 
-    </style>
    <div class="footer-basic">
     <footer>
         <div class="social"><a href="https://www.instagram.com/reisher_mella/"><i class="icon ion-social-instagram"></i></a><a href="https://www.facebook.com/profile.php?id=100009537548632"><i class="icon ion-social-facebook"></i></a></div>
@@ -277,7 +277,6 @@ color: #009879;
     <script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
     @if (session('eliminar') == 'Borrado'){
         <script>
@@ -327,7 +326,7 @@ color: #009879;
         });
 
 
-        $('.form-eliminar').submit(function(e) {
+        $('.form-elimina').submit(function(e) {
             e.preventDefault();
             Swal.fire({
                 title: 'Quieres borrar el equipo',
