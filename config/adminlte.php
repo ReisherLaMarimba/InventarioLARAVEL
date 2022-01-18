@@ -228,7 +228,7 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'search',
+            'text'         => 'Buscar',
             'topnav_right' => true,
         ],
         [
@@ -248,21 +248,21 @@ return [
         ],
         [
             'text'        => 'Lista de Equipos',
-            'url'         => 'items',
+            'url'         => '/items',
             'icon'        => 'far fa-fw fa-file',
             //'label'       => 4,
             'label_color' => 'success',
         ],
         [
             'text'        => 'Lista de empleado',
-            'url'         => 'persons',
+            'url'         => '/persons',
             'icon'        => 'fas fa-list-ol',
             //'label'       => 4,
             'label_color' => 'success',
         ],
         [
             'text'        => 'Lista de proyectos',
-            'url'         => 'proyectos',
+            'url'         => '/proyectos',
             'icon'        => 'fas fa-list-ol',
             //'label'       => 4,
             'label_color' => 'success',

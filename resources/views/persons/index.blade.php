@@ -11,59 +11,13 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
 @endsection
 
 @section('content')
-{{-- 
-@if (Session::has('mensaje'))
-{{ Session::get('mensaje') }}
-@endif
-<table class="table table-striped" id="iten">
-    <thead>
-        <tr>
-            <th>Registro #</th>
-            <th>Codigo</th>
-            <th>Nombre</th>
-            <th>Ubicacion</th>
-            <th>Retirado por</th>
-            <th>Fecha de Retiro</th>
-            <th>Fecha de Ingreso</th>
-            <th>Daño</th> 
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($item as $items)
-        <tr>
-            <td>{{$items->id}}</td>
-            <td>{{$items->codigo}}</td>
-            <td>{{$items->nombre}}</td>
-            <td>{{$items->ubicacion}}</td>
-            <td>{{$items->retirado_por}}</td>
-            <td>{{$items->fecha_retiro}}</td>
-            <td>{{$items->fecha_ingreso}}</td>
-            <td>{{$items->Daño}}</td>
-            <td>
-                <form action="{{ url('/items/'.$items->id) }}" method="post">
-                    @csrf
-                    {{method_field('DELETE')}}
-                    <input type="submit" onclick="return confirm('Eliminar equipo')" value="Eliminar">
-                </form>
 
-            </td>
-            <td>
-                <a href="{{url('/items/'.$items->id.'/edit')}}">
-                    Editar
-                </a>
-            </td>
-         
-            
-        </tr> 
-        @endforeach
-       
-    </tbody>
-    
-</table>
- --}}
 <div class="card">
     <div class="card-body">
         
@@ -127,64 +81,78 @@
     </div>
 </div>
 
-{{-- <div class="card">
-    
-    <div class="card-body">
-        <h4>Editar / Borrar  los  Equipos</h4>
-<table id="example2" class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th></th>
-           <th>Codigo</th>
-            <th>Nombre</th>
-            <th>Daño</th>
-            <th>Borrar</th>
-            <th>Eliminar</th>
-          
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($person as $persons)
-        <tr>
-            <td></td>
-            <td>{{$items->codigo}}</td>
-            <td>{{$items->nombre}}</td>
-            <td>{{$items->Daño}}</td>
-            <td>
-                <form action="{{ url('/items/'.$items->id) }}" method="post" class="form-eliminar">
-                    @csrf
-                    {{method_field('DELETE')}}
-                    <input type="submit"  value="Borrar">
-                </form>
 
-            </td>
-            <td>
-                <a href="{{url('/items/'.$items->id.'/edit')}}">
-                    Editar
-                </a>
-            </td>
-           
-         
-            
-        </tr> 
-        @endforeach
-       
-    </tbody>
-    <tfoot>
-        <tr>
-            <th></th>
-            <th>Codigo</th>
-            <th>Nombre</th>
-            <th>Daño</th>
-            <th>Borrar</th>
-            <th>Eliminar</th>
-            
-           
-        </tr>
-    </tfoot>
-</table>
-    </div>
-</div> --}}
+<div class="footer-basic">
+    <footer>
+        <div class="social"><a href="https://www.instagram.com/reisher_mella/"><i class="icon ion-social-instagram"></i></a><a href="https://www.facebook.com/profile.php?id=100009537548632"><i class="icon ion-social-facebook"></i></a></div>
+     
+        <p class="copyright">Reisher Mella© 2022</p>
+    </footer>
+</div>
+<style>
+    .table {
+border-collapse: collapse;
+margin: 25px 0;
+font-size: 0.9em;
+font-family: sans-serif;
+min-width: 400px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.table thead tr {
+background-color: #f0c126;
+color: #ffffff;
+text-align: left;
+}
+.table th,
+.table td {
+padding: 12px 15px;
+}
+.table tbody tr {
+border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+border-bottom: 2px solid #009879;
+}
+.styled tbody tr.active-row {
+font-weight: bold;
+color: #009879;
+}
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:5px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+</style>
 @stop
 
 
@@ -197,7 +165,8 @@
 <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
 <script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 @if (session('eliminar')=='Borrado'){
     <script>
      Swal.fire(
