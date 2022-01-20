@@ -103,7 +103,8 @@
                                 <th>Nombre</th>
                                 <th>retirado por</th>
                                 <th>Fecha de retiro</th>
-
+                                <th>Firma</th>
+                                   
 
                             </tr>
                         </thead>
@@ -120,7 +121,8 @@
                                 <th>Nombre</th>
                                 <th>Retirado por</th>
                                 <th>Fecha de retiro</th>
-
+                                <th>Firma</th>
+                                
 
 
                             </tr>
@@ -200,7 +202,10 @@
             //     ]
             // } );
 
-            var oTable = $('#example2').DataTable();
+            var oTable = $('#example2').DataTable({
+                responsive: true,
+            autowidth: true
+            });
             var events = $('#table');
             $('#example2 tbody').on('click', 'tr', function() {
                 $(this).toggleClass('selected');
@@ -220,6 +225,8 @@
                         '<td>' + oData[i][1] + '</td>',
                         '<td>' + oData[i][2] + '</td>',
                         '<td>' + oData[i][3] + '</td>',
+                        '<td>' + '       ' + '</td>'
+                       
                     ]).draw(false);
 
 
@@ -245,6 +252,11 @@
             });
         </script>
         <script>
+            var fecha = new Date();
+            var dia = fecha.getDate();
+            var mes = fecha.getMonth();
+            var año = fecha.getFullYear();
+            
             $('#table').DataTable({
 
                 responsive: "true",
@@ -267,7 +279,8 @@
                         text: '<i class="fas fa-file-pdf"></i>',
                         titleAttr: 'Exportar PDF',
                         className: 'btn btn-danger',
-                        orientation: 'landscape'
+                        orientation: 'landscape',
+                        
                         
                         
                         
@@ -277,9 +290,10 @@
                         text: '<i class="fas fa-print"></i>',
                         titleAttr: 'Imprimir',
                         className: 'btn btn-info',
-                        orientation: 'landscape'
-                      
-
+                        orientation: 'landscape',
+                        title:'ISSRD | Sistema De Retiros',
+                        messageTop:'Conduce de Retiro',
+                        messageBottom:'Fecha: '+dia+'/'+mes+'/'+año
                     }
 
                 ],
