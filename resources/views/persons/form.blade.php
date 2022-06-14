@@ -34,43 +34,44 @@
                 <div class="row">
                     <div class="col-md-3">
 
-                 
-                <Label for="Nombre"> Departamento</Label>
-                <input type="text" name="departamento"
-                    value="{{ isset($persons->departamento) ? $persons->departamento : '' }}" id="departamento">
+
+                        <Label for="Nombre"> Departamento</Label>
+                        <input type="text" name="departamento"
+                            value="{{ isset($persons->departamento) ? $persons->departamento : '' }}"
+                            id="departamento">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+
+
+                        <Label for="Nombre"> Encargado</Label>
+                        <input type="text" name="encargado"
+                            value="{{ isset($persons->encargado) ? $persons->encargado : '' }}" id="encargado">
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3">
 
-              
-                <Label for="Nombre"> Encargado</Label>
-                <input type="text" name="encargado"
-                    value="{{ isset($persons->encargado) ? $persons->encargado : '' }}" id="encargado">
+            <div class="row">
+                <div class="col-md-4">
+
+
+                    <input type="submit" value="Guardar Datos">
+
+                    <a href="{{ url('persons') }}" class="btn btn-warning" role="button">Regresar</a>
+                </div>
             </div>
         </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-
-          
-            <input type="submit" value="Guardar Datos">
-
-            <a href="{{ url('persons') }}" class="btn btn-warning" role="button">Regresar</a>
-        </div>
-    </div>
-</div>
     </div>
 </div>
 <style>
-    .card{
-        
+    .card {
+
         border-radius: 10%;
         display: flex;
         justify-content: center;
-        align-items:center; 
-        
+        align-items: center;
+
     }
-    
-    </style>
+
+</style>

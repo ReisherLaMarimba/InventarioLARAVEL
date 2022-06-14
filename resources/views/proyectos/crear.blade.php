@@ -14,7 +14,7 @@
 <div class="container">
 <form action="{{url('/proyectos')}}" method="post">
     @csrf
-    @include('proyectos.form');
+    @include('proyectos.form')
 </form>
 
 </div>

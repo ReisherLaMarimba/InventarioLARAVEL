@@ -8,6 +8,7 @@
                 <div class="select">
                     <select name="equip" class="form-controler">
                         <option value="">Seleccione los equipos</option>
+                     
                         @foreach ($equipos as $equipo)
                             <option value="{{ $equipo->id }}">{{ $equipo->nombre }}</option>
                         @endforeach

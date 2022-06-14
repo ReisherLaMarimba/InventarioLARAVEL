@@ -186,22 +186,6 @@
         <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.print.min.js"></script>
         <script>
-            //           var events = $('#events');
-            // var table = $('#example2').DataTable( {
-            //     dom: 'Bfrtip',
-            //     select: true,
-            //     buttons: [
-            //         {
-            //             text: 'Get selected data',
-            //             action: function () {
-            //                 var count = table.rows( { selected: true } ).data();
-
-            //                 events.prepend( '<div>'+count+' row(s) selected</div>' );
-            //             }
-            //         }
-            //     ]
-            // } );
-
             var oTable = $('#example2').DataTable({
                 responsive: true,
             autowidth: true

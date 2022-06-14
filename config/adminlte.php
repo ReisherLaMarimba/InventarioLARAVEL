@@ -302,13 +302,13 @@ return [
                         //'label'       => 4,
                         'label_color' => 'success',  
                         ], 
-                        [
-                            'text'        => 'Agregar Varios Equipo',
-                            'url'         => 'items/crear',
-                            'icon'        => 'far fa-plus-square',
-                            //'label'       => 4,
-                            'label_color' => 'success',  
-                            ],
+                        // [
+                        //     'text'        => 'Agregar Varios Equipo',
+                        //     'url'         => 'items/crear',
+                        //     'icon'        => 'far fa-plus-square',
+                        //     //'label'       => 4,
+                        //     'label_color' => 'success',  
+                        //     ],
                     ],
                     
                 ],

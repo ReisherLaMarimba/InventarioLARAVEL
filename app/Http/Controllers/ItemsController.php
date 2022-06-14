@@ -120,6 +120,7 @@ class ItemsController extends Controller
     public function update(Request $request, $id)
     {    
            
+ /* This is the code that is updating the data in the database. */
         $datosItems = request()->except(['_token','_method']);
         Items::where('id' ,'=' ,$id)->update($datosItems);
 
