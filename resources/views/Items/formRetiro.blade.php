@@ -30,6 +30,13 @@
                         @endforeach
                     </select>
                 </div>
+                
+                <div class="canti">
+                    <label for="numerField">Cantidad de:</label><br><br>
+                    <input name="name" type="number" placerholder = "Cantidad"  class="number" id="numberField">
+                </div>
+                
+                </div>
                 <div class="col-md-2">
                     <button class="btn btn-primary btn-block">Agregar</button>
 
@@ -55,6 +62,31 @@
    border:0!important;
    background: rgb(237, 255, 79);
    }
+   .canti {
+   -webkit-appearance:none;
+   -moz-appearance:none;
+   -ms-appearance:none;
+   appearance: none;
+   outline:0;
+   
+   box-shadow:none;
+   border:0!important;
+;
+   /* position: relative;
+       display: flex;
+        line-height: 1;
+        background: rgb(185, 185, 185);
+        border-radius: .25em; */
+   }
+   canti{
+       flex:1;
+       
+       
+       cursor: pointer;
+       font-size:1em;
+       font-family: 'Open Sans', sans-serif;
+   }
+
    select::-ms-expand{
        display: none;
    }
