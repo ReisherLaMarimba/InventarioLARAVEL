@@ -30,11 +30,17 @@
                         @endforeach
                     </select>
                 </div>
-                
-                <div class="canti">
-                    <label for="numerField">Cantidad de:</label><br><br>
-                    <input name="name" type="number" placerholder = "Cantidad"  class="number" id="numberField">
+                <br>
+                <br>
+                <div class="cantida">
+                    <div class="canti">
+                        <label for="numerField">Cantidad a sacar:</label>
+                        <input name="name" type="number" placerholder = "Cantidad"  class="number" id="numberField">
+                    </div>
+                    </select>
                 </div>
+                
+                
                 
                 </div>
                 <div class="col-md-2">
@@ -52,6 +58,9 @@
 
 </div>
 <style>
+    .cantida{
+        margin-top:10px;
+    }
    .select {
    -webkit-appearance:none;
    -moz-appearance:none;
