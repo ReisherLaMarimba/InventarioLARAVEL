@@ -31,7 +31,8 @@ class RetiroController extends Controller
         
         $RetUpdate = DB::table('items')
               ->where('id', $equipid)
-              ->update(['retirado_por' => $personid, 'fecha_retiro'=> $mytime,'fecha_ingreso'=>NULL]);
+              
+              ->update(['retirado_por' => $personid, 'fecha_retiro'=> $mytime,'fecha_ingreso'=>NULL,$cantidad =>]);
 
       return view('items.retiro',compact('equipos','persona','proyecto','retiros'))->with('retirar','retirado');
     }
