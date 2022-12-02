@@ -56,7 +56,7 @@
                 <div class="col-md-4">
 
 
-                    <input type="submit" value="Guardar Datos">
+                    <input id="crear_empleado" type="submit" value="Guardar Datos">
 
                     <a href="{{ url('persons') }}" class="btn btn-warning" role="button">Regresar</a>
                 </div>
