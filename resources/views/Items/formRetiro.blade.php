@@ -8,7 +8,7 @@
                 <div class="select">
                     <select name="equip" class="form-controler">
                         <option value="">Seleccione los equipos</option>
-                     
+
                         @foreach ($equipos as $equipo)
                             <option value="{{ $equipo->id }}">{{ $equipo->nombre }}</option>
                         @endforeach
@@ -35,13 +35,13 @@
                 <div class="cantida">
                     <div class="canti">
                         <label for="numerField">Cantidad a sacar:</label>
-                        <input name="name" type="number" placerholder = "Cantidad"  class="number" id="numberField">
+                        <input name="cantidad" type="number" placerholder = "Cantidad"  class="number" id="numberField">
                     </div>
-                    </select>
+
                 </div>
-                
-                
-                
+
+
+
                 </div>
                 <div class="col-md-2">
                     <button class="btn btn-primary btn-block">Agregar</button>
@@ -77,7 +77,7 @@
    -ms-appearance:none;
    appearance: none;
    outline:0;
-   
+
    box-shadow:none;
    border:0!important;
 ;
@@ -89,8 +89,8 @@
    }
    canti{
        flex:1;
-       
-       
+
+
        cursor: pointer;
        font-size:1em;
        font-family: 'Open Sans', sans-serif;
@@ -117,7 +117,7 @@
        font-family: 'Open Sans', sans-serif;
    }
    .select::after{
-      
+
        position: absolute;
        top: 0;
        right: 3em;
@@ -125,10 +125,10 @@
        background: rgb(221, 255, 72);
        cursor: pointer;
        pointer-event:auto;
-       transition:.25s all ease; 
+       transition:.25s all ease;
    }
    .select::hover{
 color:rgb(255, 217, 0);
    }
-   
+
 </style>

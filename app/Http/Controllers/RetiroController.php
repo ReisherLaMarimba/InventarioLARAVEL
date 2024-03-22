@@ -25,14 +25,15 @@ class RetiroController extends Controller
 
         $equipid = $request->input('equip');
         $personid = $request->input('person');
+        $cantidad = $request->input('cantidad');
         $carbon = new \Carbon\Carbon();
         $mytime = $carbon->now();
         // $projectid = $request->input('project');
-        
+
         $RetUpdate = DB::table('items')
               ->where('id', $equipid)
-              
-              ->update(['retirado_por' => $personid, 'fecha_retiro'=> $mytime,'fecha_ingreso'=>NULL,$cantidad =>]);
+
+              ->update(['retirado_por' => $personid, 'fecha_retiro'=> $mytime,'fecha_ingreso'=>NULL, 'cantidad'=> $cantidad]);
 
       return view('items.retiro',compact('equipos','persona','proyecto','retiros'))->with('retirar','retirado');
     }
@@ -44,7 +45,7 @@ class RetiroController extends Controller
          DB::table('items')
         ->where('id', $id)
         ->update(['retirado_por' => NULL, 'fecha_retiro'=>NULL, 'fecha_ingreso'=>$mytime]);
-           
+
         return redirect()->back()->with('ingresar','ingresado');
     }
 }
